@@ -103,7 +103,7 @@ class GAConnection:
             request = urllib2.Request(self.default_host + path, headers=headers)
 
         try:
-            response = urllib2.urlopen(request, timeout=TIMEOUT)
+            response = urllib2.urlopen(request)
         except urllib2.HTTPError, e:
             raise GoogleAnalyticsClientError(e)
         return response
